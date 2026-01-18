@@ -17,7 +17,7 @@ alias dcd='docker compose down'
 alias dce='docker compose exec'
 alias dcr='docker compose run'
 alias dcu='docker compose up'
-alias dstopall='docker container stop $(docker ps -aq)'
+alias dstopall='docker container stop $(docker container ls -aq)'
 
 alias lg='lazygit'
 
