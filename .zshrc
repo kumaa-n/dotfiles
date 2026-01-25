@@ -21,6 +21,8 @@ alias dstopall='docker container stop $(docker container ls -aq)'
 
 alias lg='lazygit'
 
+alias be='bundle exec'
+
 # ターミナル
 export PS1='%n@%1~ %#'
 
