@@ -9,6 +9,7 @@ alias nv='nvim'
 alias vi='vim'
 alias mv='mv -i'
 alias rm='rm -i'
+alias nvimzsh="nvim ~/.zshrc && source ~/.zshrc"
 
 alias ld='lazydocker'
 alias dc='docker compose'
