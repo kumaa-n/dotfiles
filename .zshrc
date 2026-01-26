@@ -1,15 +1,19 @@
 # alias設定
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 alias l='ls -CF'
 alias la='ls -A'
 alias ll='ls -alF'
-alias -g C='| pbcopy'
-alias -g F='| fzf'
-alias -g G='| grep'
 alias nv='nvim'
 alias vi='vim'
 alias mv='mv -i'
 alias rm='rm -i'
-alias nvimzsh="nvim ~/.zshrc && source ~/.zshrc"
+alias nvimzsh='nvim ~/.zshrc && source ~/.zshrc'
+
+alias -g C='| pbcopy'
+alias -g F='| fzf'
+alias -g G='| grep'
 
 alias ld='lazydocker'
 alias dc='docker compose'
