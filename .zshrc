@@ -44,6 +44,12 @@ SAVEHIST=100000
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
+# マージ済みローカルブランチ削除
+gbdm() {
+  git checkout $1
+  git branch --merged $1 | grep -vE '^\*|master$|main$|milestone$|develop$' | xargs -I % git branch -d %
+}
+
 # Python
 export PYENV_ROOT="$HOME/.pyenv_x86"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
