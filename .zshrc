@@ -28,18 +28,6 @@ alias lg='lazygit'
 
 alias be='bundle exec'
 
-# ターミナル
-export PS1='%n@%1~ %#'
-
-# git補完
-fpath=(~/.zsh/completion $fpath)
-autoload -U compinit
-compinit -u
-
-# history関連
-HISTSIZE=100000
-SAVEHIST=100000
-
 # History Beginning Search
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
@@ -49,6 +37,21 @@ gbdm() {
   git checkout $1
   git branch --merged $1 | grep -vE '^\*|master$|main$|milestone$|develop$' | xargs -I % git branch -d %
 }
+
+# mkdirしてcd（--は引数の先頭が-で始まる場合の対策）
+mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
+
+# ターミナル
+export PS1='%n@%1~ %#'
+
+# history関連
+HISTSIZE=100000
+SAVEHIST=100000
+
+# git補完
+fpath=(~/.zsh/completion $fpath)
+autoload -U compinit
+compinit -u
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv_x86"
