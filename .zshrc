@@ -34,8 +34,9 @@ bindkey '^N' history-beginning-search-forward
 
 # マージ済みローカルブランチ削除
 gbdm() {
-  git checkout $1
-  git branch --merged $1 | grep -vE '^\*|master$|main$|milestone$|develop$' | xargs -I % git branch -d %
+  local base="${1:-main}"
+  git switch "$base" || return 1
+  git branch --merged "$base" | grep -vE '^\*|master$|main$|milestone$|develop$' | xargs -I % git branch -d %
 }
 
 # mkdirしてcd（--は引数の先頭が-で始まる場合の対策）
