@@ -64,3 +64,6 @@ eval "$(starship init zsh)"
 
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+
+# PATH設定
+export PATH="$HOME/.local/bin:$PATH"
