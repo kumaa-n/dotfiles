@@ -9,6 +9,7 @@ alias nv='nvim'
 alias vi='vim'
 alias mv='mv -i'
 alias rm='rm -i'
+alias tf='tail -f'
 alias nvimzsh='nvim ~/.zshrc && source ~/.zshrc'
 
 alias -g C='| pbcopy'
