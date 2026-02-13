@@ -1,3 +1,13 @@
+export LANG=ja_JP.UTF-8
+export EDITOR=nvim
+export PS1='%n@%1~ %#'
+
+export PATH="$HOME/.local/bin:$PATH"
+
+# history関連
+HISTSIZE=100000
+SAVEHIST=100000
+
 # alias設定
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -43,13 +53,6 @@ gbdm() {
 # mkdirしてcd（--は引数の先頭が-で始まる場合の対策）
 mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
 
-# ターミナル
-export PS1='%n@%1~ %#'
-
-# history関連
-HISTSIZE=100000
-SAVEHIST=100000
-
 # git補完
 fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
@@ -65,6 +68,3 @@ eval "$(starship init zsh)"
 
 # Antigravity
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
-
-# PATH設定
-export PATH="$HOME/.local/bin:$PATH"
