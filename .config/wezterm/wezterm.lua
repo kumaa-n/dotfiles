@@ -6,7 +6,6 @@ config.font_size = 15.0
 config.use_ime = true
 config.window_background_opacity = 1.0
 config.macos_window_background_blur = 20
--- config.window_background_image = wezterm.home_dir
 config.window_background_image = wezterm.config_dir .. "/kirby.jpg"
 config.window_background_image_hsb = {
 	brightness = 0.2,
