@@ -53,6 +53,9 @@ gbdm() {
 # mkdirしてcd（--は引数の先頭が-で始まる場合の対策）
 mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
 
+# 天気予報
+wtr() { curl "https://ja.wttr.in/$1?2nF"; }
+
 # git補完
 fpath=(~/.zsh/completion $fpath)
 autoload -U compinit
