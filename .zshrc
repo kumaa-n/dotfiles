@@ -38,6 +38,7 @@ alias dstopall='docker container stop $(docker container ls -aq)'
 alias lg='lazygit'
 
 alias be='bundle exec'
+alias bi='bundle install'
 
 # History Beginning Search
 bindkey '^P' history-beginning-search-backward
