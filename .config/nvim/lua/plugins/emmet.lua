@@ -1,7 +1,7 @@
 return {
   {
     "mattn/emmet-vim",
-    ft = { "html", "css", "javascript", "typescript" },
+    ft = { "html", "css", "javascript", "typescript", "javascriptreact", "typescriptreact" },
     keys = {
       {
         "<C-l>",

@@ -11,16 +11,14 @@ SAVEHIST=100000
 # alias設定
 alias ..='cd ..'
 alias ...='cd ../..'
-alias ....='cd ../../..'
-alias l='ls -CF'
-alias la='ls -A'
-alias ll='ls -alF'
+alias cat='bat'
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -alF --icons --group-directories-first --git'
+alias lt='eza --tree --level=2 --icons'
 alias nv='nvim'
-alias vi='vim'
 alias mv='mv -i'
 alias rm='rm -i'
-alias tf='tail -f'
-alias nvimzsh='nvim ~/.zshrc && source ~/.zshrc'
+alias nvzsh='nvim ~/.zshrc && source ~/.zshrc'
 
 alias -g C='| pbcopy'
 alias -g F='| fzf'
@@ -57,18 +55,45 @@ mkcd() { mkdir -p -- "$1" && cd -- "$1"; }
 # 天気予報
 wtr() { curl "https://ja.wttr.in/$1?2nF"; }
 
-# git補完
-fpath=(~/.zsh/completion $fpath)
-autoload -U compinit
-compinit -u
+# 補完
+autoload -Uz compinit
+compinit
 
-# Python
-export PYENV_ROOT="$HOME/.pyenv_x86"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
+# mise
+eval "$(mise activate zsh --shims)"
 
 # starship
 eval "$(starship init zsh)"
 
-# Antigravity
-export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
+# zoxide
+if [[ $- == *i* ]]; then
+  eval "$(zoxide init zsh --cmd j)"
+  alias cd='j'
+  alias cdi='ji'
+fi
+
+# zsh-autosuggestions
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
