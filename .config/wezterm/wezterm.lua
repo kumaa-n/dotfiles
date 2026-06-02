@@ -13,6 +13,9 @@ config.window_background_image_hsb = {
 	hue = 1.0,
 }
 
+-- 合字を無効化
+config.harfbuzz_features = { "calt=0", "clig=0", "dlig=0", "liga=0" }
+
 ----------------------------------------------------
 -- Tab
 ----------------------------------------------------
