@@ -45,6 +45,8 @@ config.show_new_tab_button_in_tab_bar = false
 -- タブの閉じるボタンを非表示
 config.show_close_tab_button_in_tabs = false
 
+config.color_scheme = "Kanagawa (Gogh)"
+
 -- タブ同士の境界線を非表示
 config.colors = {
 	tab_bar = {
