@@ -1,78 +1,116 @@
 format = """
 $directory\
-[ ](fg:#88C0D0 bg:#1d2230)\
-$git_branch\
-$git_status\
-[ ](fg:#1d2230)\
+[](fg:blue bg:sumi_ink2)\
+([$git_branch$git_status](bg:sumi_ink2)[](fg:yellow bg:sumi_ink2))\
+$docker_context\
+$nodejs\
+$bun\
+$python\
+$php\
+$perl\
+$rust\
+$golang\
+$ruby\
+$package\
+[](fg:sumi_ink2)\
 \n$character
 """
 
 right_format = """
-$cmd_duration\
+$cmd_duration \
 $username\
-✨
+[](fg:wave_blue2)\
 $time
 """
 
-# コマンドラインに1行分のスペースを入れる
 add_newline = true
+palette = "kanagawa"
 
-[username]
-style_user = "white bold"
-style_root = "black bold"
-format = "user: [$user]($style) "
-disabled = false
-
-
-# left_promptとright_promptの間を何で埋めるか設定
-[fill]
-symbol = ' '
+[palettes.kanagawa]
+sumi_ink2 = "#2A2A37"
+wave_blue2 = "#2D4F67"
 
 [directory]
-style = "fg:#2E3440 bg:#88C0D0 bold"
-# format = "[ $path ]($style)"
+style = "fg:#16161D bg:blue bold"
 truncation_length = 10
 truncate_to_repo = false
 truncation_symbol = "…/"
-# truncation_symbol = ' ' # nf-fa-folder_open
-# truncate_to_repo = false
-# style = 'fg:#7aa2f7 bg:#1a1b26'
-read_only = ' 󰌾 ' # nf-md-lock
-read_only_style = 'fg:#f7768e bg:#1a1b26'
-format = '[ $path ]($style)[$read_only]($read_only_style)'
-
-
-[directory.substitutions]
-"Documents" = "󰈙 "
-"Downloads" = " "
-"Music" = " "
-"Pictures" = " "
-
-[aws]
-disabled = true
-[gcloud]
-disabled = true
+read_only = " 󰌾 "
+read_only_style = "fg:red bg:blue"
+format = "[ $path ]($style)[$read_only]($read_only_style)"
 
 [git_branch]
 symbol = ""
-style = "bg:#1d2230"
-format = '[[ $symbol $branch ](fg:#769ff0 bg:#1d2230)]($style)'
+style = "fg:blue bg:sumi_ink2"
+format = "[ $symbol $branch ]($style)"
 
 [git_status]
-style = "bg:#1d2230"
-format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#1d2230)]($style)'
+style = "fg:white bg:sumi_ink2"
+format = "([$all_status$ahead_behind ]($style))"
+
+[docker_context]
+style = "fg:cyan bg:sumi_ink2"
+format = "[  $context ]($style)"
+
+[nodejs]
+style = "fg:green bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[bun]
+style = "fg:white bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[python]
+style = "fg:yellow bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[php]
+style = "fg:purple bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[perl]
+style = "fg:blue bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[rust]
+style = "fg:red bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[golang]
+style = "fg:cyan bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[ruby]
+style = "fg:red bg:sumi_ink2"
+format = "[  $version ]($style)"
+
+[package]
+disabled = true
+style = "fg:yellow bg:sumi_ink2"
+format = "[ 󰏗 $version ]($style)"
+
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
+[character]
+vimcmd_symbol = "[V](bold green)"
 
 [cmd_duration]
 min_time = 1
-style = 'fg:#e0af68'
-format = "[$duration]($style)" # nf-pl-right_soft_divider, nf-mdi-clock
+style = "fg:yellow"
+format = "[$duration]($style)" 
+
+[username]
+disabled = false
+style_user = "white bold"
+style_root = "black bold"
+format = "user: [$user]($style) "
 
 [time]
 disabled = false
-time_format = "%R" # Hour:Minute Format
-# style = "bg:#1d2230"
-format = '[[   $time ](fg:#a0a9cb)]($style)'
-
-[character]
-vimcmd_symbol = '[V](bold green) '
-
+time_format = "%R" # hh:mm
+style = "fg:white bg:wave_blue2"
+format = "[  $time ]($style)"
