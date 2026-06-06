@@ -1,7 +1,7 @@
 format = """
 $directory\
-[](fg:blue bg:sumi_ink2)\
-([$git_branch$git_status](bg:sumi_ink2)[](fg:yellow bg:sumi_ink2))\
+[](fg:blue bg:sumi_ink4)\
+([$git_branch$git_status](bg:sumi_ink4)[](fg:yellow bg:sumi_ink4))\
 $docker_context\
 $nodejs\
 $bun\
@@ -12,7 +12,7 @@ $rust\
 $golang\
 $ruby\
 $package\
-[](fg:sumi_ink2)\
+[](fg:sumi_ink4)\
 \n$character
 """
 
@@ -27,11 +27,12 @@ add_newline = true
 palette = "kanagawa"
 
 [palettes.kanagawa]
-sumi_ink2 = "#2A2A37"
+sumi_ink0 = "#16161D"
+sumi_ink4 = "#2A2A37"
 wave_blue2 = "#2D4F67"
 
 [directory]
-style = "fg:#16161D bg:blue bold"
+style = "fg:sumi_ink0 bg:blue bold"
 truncation_length = 10
 truncate_to_repo = false
 truncation_symbol = "…/"
@@ -41,52 +42,52 @@ format = "[ $path ]($style)[$read_only]($read_only_style)"
 
 [git_branch]
 symbol = ""
-style = "fg:blue bg:sumi_ink2"
+style = "fg:blue bg:sumi_ink4"
 format = "[ $symbol $branch ]($style)"
 
 [git_status]
-style = "fg:white bg:sumi_ink2"
+style = "fg:white bg:sumi_ink4"
 format = "([$all_status$ahead_behind ]($style))"
 
 [docker_context]
-style = "fg:cyan bg:sumi_ink2"
+style = "fg:cyan bg:sumi_ink4"
 format = "[  $context ]($style)"
 
 [nodejs]
-style = "fg:green bg:sumi_ink2"
+style = "fg:green bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [bun]
-style = "fg:white bg:sumi_ink2"
+style = "fg:white bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [python]
-style = "fg:yellow bg:sumi_ink2"
+style = "fg:yellow bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [php]
-style = "fg:purple bg:sumi_ink2"
+style = "fg:purple bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [perl]
-style = "fg:blue bg:sumi_ink2"
+style = "fg:blue bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [rust]
-style = "fg:red bg:sumi_ink2"
+style = "fg:red bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [golang]
-style = "fg:cyan bg:sumi_ink2"
+style = "fg:cyan bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [ruby]
-style = "fg:red bg:sumi_ink2"
+style = "fg:red bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [package]
 disabled = true
-style = "fg:yellow bg:sumi_ink2"
+style = "fg:yellow bg:sumi_ink4"
 format = "[ 󰏗 $version ]($style)"
 
 [aws]
