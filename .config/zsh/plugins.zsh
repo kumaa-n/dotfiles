@@ -36,3 +36,11 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
+
+# starship/zsh-autosuggestions 等が zle-keymap-select をラップすることで
+# FUNCNEST エラーが起きるため、全プラグイン読み込み後に上書きする
+# bindkey -v (viモード) のキーマップ切り替え時にプロンプトを再描画する
+function zle-keymap-select {
+  zle reset-prompt
+}
+zle -N zle-keymap-select
