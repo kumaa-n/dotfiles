@@ -20,6 +20,9 @@ config.harfbuzz_features = { "calt=0", "clig=0", "dlig=0", "liga=0" }
 ----------------------------------------------------
 -- Tab
 ----------------------------------------------------
+config.window_decorations = "RESIZE"
+config.show_tabs_in_tab_bar = true
+
 local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
