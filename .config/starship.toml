@@ -19,7 +19,7 @@ $package\
 right_format = """
 $cmd_duration \
 $username\
-[](fg:wave_blue2)\
+[](fg:blue)\
 $time
 """
 
@@ -29,7 +29,7 @@ palette = "kanagawa"
 [palettes.kanagawa]
 sumi_ink0 = "#16161D"
 sumi_ink4 = "#2A2A37"
-wave_blue2 = "#2D4F67"
+# wave_blue2 = "#2D4F67"
 
 [directory]
 style = "fg:sumi_ink0 bg:blue bold"
@@ -101,7 +101,7 @@ vimcmd_symbol = "[V](bold green)"
 
 [cmd_duration]
 min_time = 1
-style = "fg:yellow"
+style = "fg:blue"
 format = "[$duration]($style)" 
 
 [username]
@@ -113,5 +113,5 @@ format = "user: [$user]($style) "
 [time]
 disabled = false
 time_format = "%R" # hh:mm
-style = "fg:white bg:wave_blue2"
+style = "fg:sumi_ink0 bg:blue"
 format = "[  $time ]($style)"
