@@ -50,11 +50,11 @@ style = "fg:white bg:sumi_ink4"
 format = "([$all_status$ahead_behind ]($style))"
 
 [docker_context]
-style = "fg:cyan bg:sumi_ink4"
+style = "fg:blue bg:sumi_ink4"
 format = "[  $context ]($style)"
 
 [nodejs]
-style = "fg:green bg:sumi_ink4"
+style = "fg:bright-green bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [bun]
@@ -62,7 +62,7 @@ style = "fg:white bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [python]
-style = "fg:yellow bg:sumi_ink4"
+style = "fg:bright-yellow bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [php]
@@ -70,7 +70,7 @@ style = "fg:purple bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [perl]
-style = "fg:blue bg:sumi_ink4"
+style = "fg:bright-blue bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [rust]
@@ -78,11 +78,11 @@ style = "fg:red bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [golang]
-style = "fg:cyan bg:sumi_ink4"
+style = "fg:bright-cyan bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [ruby]
-style = "fg:red bg:sumi_ink4"
+style = "fg:bright-red bg:sumi_ink4"
 format = "[  $version ]($style)"
 
 [package]
