@@ -6,6 +6,10 @@ return {
     "tpope/vim-endwise",
   },
   {
+    "slim-template/vim-slim",
+    ft = { "slim" },
+  },
+  {
     "mason-org/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
