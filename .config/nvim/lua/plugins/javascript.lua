@@ -6,6 +6,7 @@ return {
       vim.list_extend(opts.ensure_installed, { "typescript-language-server" })
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = {
@@ -14,6 +15,7 @@ return {
       },
     },
   },
+
   {
     "nvim-treesitter/nvim-treesitter",
     opts = function(_, opts)

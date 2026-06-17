@@ -6,6 +6,7 @@ return {
       vim.list_extend(opts.ensure_installed, { "html-lsp", "css-lsp", "tailwindcss-language-server" })
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = {

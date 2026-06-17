@@ -6,6 +6,7 @@ return {
       vim.list_extend(opts.ensure_installed, { "typos-lsp" })
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = {

@@ -2,13 +2,16 @@ return {
   {
     "tpope/vim-rails",
   },
+
   {
     "tpope/vim-endwise",
   },
+
   {
     "slim-template/vim-slim",
     ft = { "slim" },
   },
+
   {
     "mason-org/mason.nvim",
     opts = function(_, opts)
@@ -22,6 +25,7 @@ return {
       })
     end,
   },
+
   {
     "neovim/nvim-lspconfig",
     opts = {
