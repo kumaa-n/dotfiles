@@ -36,3 +36,12 @@ alias bi='bundle install'
 alias -g C='| pbcopy'
 alias -g F='| fzf'
 alias -g G='| grep'
+
+# 現在のブランチ名をクリップボードにコピー
+alias yb='git branch --show-current | pbcopy && echo "Copied branch: $(git branch --show-current)"'
+
+# カレントディレクトリのgitルートからの相対パスをクリップボードにコピー
+alias yg='echo -n "$(git rev-parse --show-prefix | sed "s:/$::")" | pbcopy && echo "Copied git-relative path: $(git rev-parse --show-prefix | sed "s:/$::")"'
+
+# カレントディレクトリの絶対パスをクリップボードにコピー
+alias yf='echo -n "$(pwd)" | pbcopy && echo "Copied full path: $(pwd)"'
