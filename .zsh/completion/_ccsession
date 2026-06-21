@@ -1,0 +1,64 @@
+#compdef ccsession
+
+# ccsession - fzf frontend for agent session resume
+
+_ccsession_sources=(claude all opencode grok codex)
+_ccsession_colors=(auto always never)
+
+_ccsession_global_flags=(
+  '--source[session backend]:source:(claude all opencode grok codex)'
+  '--all[shorthand for --source=all]'
+  '--opencode[shorthand for --source=opencode]'
+  '--grok[shorthand for --source=grok]'
+  '--codex[shorthand for --source=codex]'
+  '--exclude-dir[hide sessions whose cwd contains <s>]:dir substring:'
+  '--bind-grep[key that switches the picker to grep mode]:key:'
+  '--bind-dir[key that switches the picker to dir mode]:key:'
+  '--bind-fuzzy[key that switches the picker to fuzzy mode]:key:'
+)
+
+_ccsession_list_flags=(
+  '--grep[filter sessions by user/assistant content]:query:'
+  '--regex[treat --grep query as a regular expression]'
+  '--exclude-dir[hide sessions whose cwd contains <s>]:dir substring:'
+  '--json[emit a JSON array instead of fzf TSV rows]'
+  '--limit[keep only the first n rows after filtering]:n:'
+  '--color[color output mode]:mode:(auto always never)'
+  '--no-color[shorthand for --color=never]'
+)
+
+_ccsession() {
+  local curcontext="$curcontext" state line
+  typeset -A opt_args
+
+  _arguments -C \
+    $_ccsession_global_flags \
+    '1: :->subcommand' \
+    '*:: :->args' && return 0
+
+  case $state in
+    subcommand)
+      local -a subcommands=(
+        'list:list sessions as TSV rows (or JSON with --json)'
+        'preview:preview pane content for a session'
+        'resume-spec:print the resume target as JSON'
+        'resume:chdir to original cwd and exec the agent'
+      )
+      _describe -t subcommands 'ccsession subcommand' subcommands
+      ;;
+    args)
+      case ${line[1]} in
+        list)
+          _arguments $_ccsession_list_flags
+          ;;
+        preview|resume-spec|resume)
+          _arguments \
+            '--locator[resume locator]:locator:' \
+            '*:sessionId:'
+          ;;
+      esac
+      ;;
+  esac
+}
+
+_ccsession "$@"
