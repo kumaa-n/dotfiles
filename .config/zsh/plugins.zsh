@@ -5,11 +5,14 @@ eval "$(mise activate zsh --shims)"
 eval "$(starship init zsh)"
 
 # zoxide
-if [[ $- == *i* ]]; then
+if [[ $- == *i* ]] && command_exists zoxide; then
   eval "$(zoxide init zsh --cmd j)"
   alias cd='j'
   alias cdi='ji'
 fi
+
+# zsh-autocomplete
+# source ~/.zsh/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 # zsh-autosuggestions
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -36,6 +39,8 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-rust
 
 ### End of Zinit's installer chunk
+
+# zinit light zsh-users/zsh-syntax-highlighting
 
 # starship/zsh-autosuggestions 等が zle-keymap-select をラップすることで
 # FUNCNEST エラーが起きるため、全プラグイン読み込み後に上書きする

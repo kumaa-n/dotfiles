@@ -2,6 +2,11 @@ command_exists() {
   command -v "$1" >/dev/null 2>&1;
 }
 
+show_command() {
+    echo "=> $*"
+    "$@"
+}
+
 # マージ済みローカルブランチ削除
 gbdm() {
   local base="${1:-main}"
