@@ -8,6 +8,9 @@ vim.keymap.set("n", "<C-S-l>", "<C-w>>", { desc = "Increase window width" })
 vim.keymap.set("n", "<C-S-j>", "<C-w>+", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-S-k>", "<C-w>-", { desc = "Decrease window height" })
 
+-- Yank
+vim.keymap.set("n", "<leader>y", "", { desc = "Yank" })
+
 -- Yank git-relative path
 vim.keymap.set("n", "<leader>yg", function()
   local prefix = vim.fn.system("git rev-parse --show-prefix"):gsub("\n", "")
