@@ -38,6 +38,6 @@ alias -g F='| fzf'
 alias -g G='| grep'
 
 # クリップボードへコピー
-alias yb='git branch --show-current | pbcopy && echo "Copied branch: $(git branch --show-current)"'
+alias yb='echo -n "$(git branch --show-current)" | pbcopy && echo "Copied branch: $(git branch --show-current)"'
 alias yf='echo -n "$(pwd)" | pbcopy && echo "Copied full path: $(pwd)"'
 alias yg='echo -n "$(git rev-parse --show-prefix | sed "s:/$::")" | pbcopy && echo "Copied git-relative path: $(git rev-parse --show-prefix | sed "s:/$::")"'
