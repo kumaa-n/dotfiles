@@ -54,6 +54,18 @@ return {
       { "<leader>tw", "<cmd>Pantran<CR>", mode = { "n", "v" }, desc = "Show Translate Window" },
     },
     config = function()
+      -- Pantran はフロートをバッファ削除依存で閉じており、非同期翻訳や他プラグインの
+      -- autocmd と競合するとペインが片方だけ残ることがある。win_id を明示的に閉じる。
+      local win = require("pantran.ui.window")
+      local orig_close = win.close
+      win.close = function(self)
+        orig_close(self)
+        pcall(vim.api.nvim_win_close, self.win_id, true)
+        if self.title then
+          pcall(vim.api.nvim_win_close, self.title.win_id, true)
+        end
+      end
+
       local actions = require("pantran.ui.actions")
       require("pantran").setup({
         default_engine = "google",
