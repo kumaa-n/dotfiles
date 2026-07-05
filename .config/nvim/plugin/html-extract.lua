@@ -36,7 +36,10 @@ vim.api.nvim_create_user_command("HtmlExtract", function(opts)
   build_selectors(lines)
 end, { range = true })
 
-vim.keymap.set("n", "<leader>hx", "<cmd>%HtmlExtract<CR>", { desc = "Extract HTML class/id as CSS selectors (whole buffer)" })
+vim.keymap.set(
+  "n",
+  "<leader>hx",
+  "<cmd>%HtmlExtract<CR>",
+  { desc = "Extract HTML class/id as CSS selectors (whole buffer)" }
+)
 vim.keymap.set("v", "<leader>hx", ":HtmlExtract<CR>", { desc = "Extract HTML class/id as CSS selectors (selection)" })
-
-return {}
