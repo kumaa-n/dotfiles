@@ -4,13 +4,13 @@ return {
     cmd = { "TranslateW", "TranslateR" },
     keys = {
       -- Popup
-      { "<leader>t", "", desc = "Translate" },
+      { "<leader>t", "", mode = { "n", "v" }, desc = "Translate" },
       { "<leader>tj", "<cmd>TranslateW<CR>", mode = "n", desc = "Translate words into Japanese" },
       { "<leader>tj", ":'<,'>TranslateW<CR>", mode = "v", desc = "Translate lines into Japanese" },
       { "<leader>te", "<cmd>TranslateW --target_lang=en<CR>", mode = "n", desc = "Translate words into English" },
       { "<leader>te", ":'<,'>TranslateW --target_lang=en<CR>", mode = "v", desc = "Translate lines into English" },
       -- Replace
-      { "<leader>tr", "", desc = "Translate Replace" },
+      { "<leader>tr", "", mode = { "n", "v" }, desc = "Translate Replace" },
       -- Replace to Japanese
       { "<leader>trj", ":'<,'>TranslateR<CR>", mode = "v", desc = "Replace to Japanese" },
       {
@@ -54,18 +54,6 @@ return {
       { "<leader>tw", "<cmd>Pantran<CR>", mode = { "n", "v" }, desc = "Show Translate Window" },
     },
     config = function()
-      -- Pantran はフロートをバッファ削除依存で閉じており、非同期翻訳や他プラグインの
-      -- autocmd と競合するとペインが片方だけ残ることがある。win_id を明示的に閉じる。
-      local win = require("pantran.ui.window")
-      local orig_close = win.close
-      win.close = function(self)
-        orig_close(self)
-        pcall(vim.api.nvim_win_close, self.win_id, true)
-        if self.title then
-          pcall(vim.api.nvim_win_close, self.title.win_id, true)
-        end
-      end
-
       local actions = require("pantran.ui.actions")
       require("pantran").setup({
         default_engine = "google",
@@ -124,6 +112,18 @@ return {
           },
         },
       })
+
+      -- Pantran はフロートをバッファ削除依存で閉じており、非同期翻訳や他プラグインの
+      -- autocmd と競合するとペインが片方だけ残ることがある。win_id を明示的に閉じる。
+      local win = require("pantran.ui.window")
+      local orig_close = win.close
+      win.close = function(self)
+        orig_close(self)
+        pcall(vim.api.nvim_win_close, self.win_id, true)
+        if self.title then
+          pcall(vim.api.nvim_win_close, self.title.win_id, true)
+        end
+      end
     end,
   },
 }
