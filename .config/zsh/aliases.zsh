@@ -22,10 +22,6 @@ alias rm='rm -i'
 alias ld='lazydocker'
 alias lg='lazygit'
 
-alias -g C='| pbcopy'
-alias -g F='| fzf'
-alias -g G='| grep'
-
 # クリップボードへコピー
 alias yb='echo -n "$(git branch --show-current)" | pbcopy && echo "Copied branch: $(git branch --show-current)"'
 alias yf='echo -n "$(pwd)" | pbcopy && echo "Copied full path: $(pwd)"'

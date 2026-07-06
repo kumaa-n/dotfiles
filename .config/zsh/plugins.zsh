@@ -25,8 +25,11 @@ abbr -S -qq dce='docker compose exec'
 abbr -S -qq dcr='docker compose run'
 abbr -S -qq dcu='docker compose up'
 abbr -S -qq dstopall='docker container stop $(docker container ls -aq)'
-abbr -S -qq be='bundle exec'
-abbr -S -qq bi='bundle install'
+abbr -S -qq -g bue='bundle exec'
+abbr -S -qq -g bui='bundle install'
+abbr -S -qq -g C='| pbcopy'
+abbr -S -qq -g F='| fzf'
+abbr -S -qq -g G='| grep'
 
 # starship/zsh-autosuggestions 等が zle-keymap-select をラップすることで
 # FUNCNEST エラーが起きるため、全プラグイン読み込み後に上書きする
