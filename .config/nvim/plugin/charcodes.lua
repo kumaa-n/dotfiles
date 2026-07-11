@@ -125,7 +125,7 @@ local function show_panel(lines)
     height = height,
     style = "minimal",
     border = "rounded",
-    title = " CharCodes ",
+    title = " 文字コード ",
     title_pos = "center",
   })
   panel_win = win
@@ -137,6 +137,16 @@ local function show_panel(lines)
       end
     end, { buffer = buf, nowait = true, silent = true })
   end
+  -- フォーカスが外れたら（他ウィンドウへ移動したら）自動で閉じる
+  vim.api.nvim_create_autocmd("WinLeave", {
+    buffer = buf,
+    once = true,
+    callback = function()
+      if vim.api.nvim_win_is_valid(win) then
+        vim.api.nvim_win_close(win, true)
+      end
+    end,
+  })
 end
 
 -- カーソル下の1文字を表示
