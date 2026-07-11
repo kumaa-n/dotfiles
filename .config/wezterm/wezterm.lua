@@ -4,15 +4,18 @@ local config = wezterm.config_builder()
 config.automatically_reload_config = true
 config.font_size = 15.0
 config.use_ime = true
-config.window_background_opacity = 1.0
-config.macos_window_background_blur = 20
 config.window_background_image = wezterm.config_dir .. "/kirby.jpg"
 config.window_background_image_hsb = {
 	brightness = 0.2,
-	saturation = 1.0,
-	hue = 1.0,
 }
+
 config.color_scheme = "Kanagawa (Gogh)"
+local palette = {
+	sumiInk0 = "#16161D",
+	sumiInk1 = "#1F1F28",
+	fujiGray = "#727169",
+	waveAqua2 = "#7AA89F",
+}
 
 -- 合字を無効化
 config.harfbuzz_features = { "calt=0", "clig=0", "dlig=0", "liga=0" }
@@ -22,33 +25,37 @@ config.harfbuzz_features = { "calt=0", "clig=0", "dlig=0", "liga=0" }
 ----------------------------------------------------
 config.window_decorations = "RESIZE"
 config.show_tabs_in_tab_bar = true
+config.use_fancy_tab_bar = false
+config.show_new_tab_button_in_tab_bar = false
 
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+local colors = {
+	inactive_bg = palette.sumiInk0,
+	inactive_fg = palette.fujiGray,
+	active_bg = palette.sumiInk1,
+	active_fg = palette.waveAqua2,
+}
+
+config.colors = {
+	tab_bar = {
+		background = colors.inactive_bg,
+	},
+}
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local background = "#658594"
-	local foreground = "#FFFFFF"
-	local edge_background = "none"
+	local background = colors.inactive_bg
+	local foreground = colors.inactive_fg
 
 	if tab.is_active then
-		background = "#938056"
-		foreground = "#FFFFFF"
+		background = colors.active_bg
+		foreground = colors.active_fg
 	end
 
-	local edge_foreground = background
 	local index = tab.tab_index + 1
 	local title = "   " .. index .. ": " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. "   "
 	return {
-		{ Background = { Color = edge_background } },
-		{ Foreground = { Color = edge_foreground } },
-		{ Text = SOLID_LEFT_ARROW },
 		{ Background = { Color = background } },
 		{ Foreground = { Color = foreground } },
 		{ Text = title },
-		{ Background = { Color = edge_background } },
-		{ Foreground = { Color = edge_foreground } },
-		{ Text = SOLID_RIGHT_ARROW },
 	}
 end)
 
