@@ -41,7 +41,7 @@ read_only_style = "fg:red bg:blue"
 format = "[ $path ]($style)[$read_only]($read_only_style)"
 
 [git_branch]
-symbol = ""
+symbol = ""
 style = "fg:blue bg:sumi_ink4"
 format = "[ $symbol $branch ]($style)"
 
