@@ -31,7 +31,6 @@ config.show_new_tab_button_in_tab_bar = false
 local colors = {
 	inactive_bg = palette.sumiInk0,
 	inactive_fg = palette.fujiGray,
-	-- VS Code 風: グレーで少し持ち上げ + 青文字/青下線でアクセント
 	active_bg = palette.sumiInk4,
 	active_fg = palette.crystalBlue,
 }
