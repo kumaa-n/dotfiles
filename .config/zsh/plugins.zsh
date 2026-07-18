@@ -30,11 +30,3 @@ abbr -S -qq -g bui='bundle install'
 abbr -S -qq -g C='| pbcopy'
 abbr -S -qq -g F='| fzf'
 abbr -S -qq -g G='| grep'
-
-# starship/zsh-autosuggestions 等が zle-keymap-select をラップすることで
-# FUNCNEST エラーが起きるため、全プラグイン読み込み後に上書きする
-# bindkey -v (viモード) のキーマップ切り替え時にプロンプトを再描画する
-function zle-keymap-select {
-  zle reset-prompt
-}
-zle -N zle-keymap-select

@@ -13,9 +13,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
 
-# vim-mode
-bindkey -v
-
 # History Beginning Search
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
