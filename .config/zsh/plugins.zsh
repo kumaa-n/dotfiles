@@ -4,6 +4,10 @@ eval "$(mise activate zsh --shims)"
 # starship
 eval "$(starship init zsh)"
 
+# Atuin
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
 # zoxide
 if [[ $- == *i* ]] && command_exists zoxide; then
   eval "$(zoxide init zsh --cmd j)"
