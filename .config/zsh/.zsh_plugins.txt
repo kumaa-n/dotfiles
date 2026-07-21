@@ -1,2 +1,3 @@
+atuinsh/atuin
 olets/zsh-abbr
 zsh-users/zsh-autosuggestions
