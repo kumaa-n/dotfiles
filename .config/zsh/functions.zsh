@@ -19,7 +19,7 @@ nvzsh() {
     nvim .
   )
 
-  source ~/.zshrc
+  source "$ZDOTDIR/.zshrc"
 }
 
 # 天気予報

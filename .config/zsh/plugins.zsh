@@ -4,10 +4,6 @@ eval "$(mise activate zsh --shims)"
 # starship
 eval "$(starship init zsh)"
 
-# Atuin
-. "$HOME/.atuin/bin/env"
-eval "$(atuin init zsh)"
-
 # zoxide
 if [[ $- == *i* ]] && command_exists zoxide; then
   eval "$(zoxide init zsh --cmd j)"
@@ -20,7 +16,7 @@ fi
 antidote_dir=/usr/local/share/antidote
 [[ -d $antidote_dir ]] || antidote_dir=/opt/homebrew/share/antidote
 source "$antidote_dir/antidote.zsh"
-antidote load "${ZDOTDIR:-$HOME/.config/zsh}/.zsh_plugins.txt"
+antidote load "$ZDOTDIR/.zsh_plugins.txt"
 
 # zsh-abbr
 abbr -S -qq dcb='docker compose build'
