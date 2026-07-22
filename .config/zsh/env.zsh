@@ -1,8 +1,4 @@
-export LANG=ja_JP.UTF-8
-export EDITOR=nvim
-export PS1='%n@%1~ %#'
-
-export PATH="$HOME/.local/bin:$PATH"
+PS1='%n@%1~ %#'
 
 # history
 HISTFILE="$HOME/.zsh_history"
