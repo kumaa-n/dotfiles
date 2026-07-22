@@ -7,13 +7,15 @@
 #   - 何も無い                  → 新しく作る
 link() {
   local src=$1 dest=$2
+
   if [[ -L $dest ]]; then
     [[ "$(readlink "$dest")" == "$src" ]] && return
-    rm "$dest"; ln -s "$src" "$dest"; echo "relinked: $dest"
+
+    rm "$dest" && ln -s "$src" "$dest" && echo "relinked: $dest"
   elif [[ -e $dest ]]; then
-    echo "skip: $dest が実体として存在します"
+    echo "skip: $dest は既に存在します。手動で内容を確認してください。"
   else
-    ln -s "$src" "$dest"; echo "linked: $dest"
+    ln -s "$src" "$dest" && echo "linked: $dest"
   fi
 }
 
