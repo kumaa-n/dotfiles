@@ -2,7 +2,7 @@ PS1='%n@%1~ %#'
 
 # history
 HISTFILE="$HOME/.zsh_history"
-HISTSIZE=100000
+HISTSIZE=20000
 SAVEHIST=100000
 
 setopt HIST_IGNORE_ALL_DUPS
