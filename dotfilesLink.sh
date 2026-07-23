@@ -16,7 +16,6 @@ link() {
 }
 
 mkdir -p ~/.config
-mkdir -p ~/.zsh
 
 link ~/.dotfiles/.zshenv ~/.zshenv
 link ~/.dotfiles/.config/git ~/.config/git
@@ -25,4 +24,3 @@ link ~/.dotfiles/.config/starship.toml ~/.config/starship.toml
 link ~/.dotfiles/.config/nvim ~/.config/nvim
 link ~/.dotfiles/.config/zsh ~/.config/zsh
 link ~/.dotfiles/.config/yazi ~/.config/yazi
-link ~/.dotfiles/.zsh/completion ~/.zsh/completion

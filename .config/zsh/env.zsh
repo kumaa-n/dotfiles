@@ -16,6 +16,6 @@ bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
 # 補完
-fpath=(~/.zsh/completion $fpath)
+fpath=($ZDOTDIR/completion $fpath)
 autoload -Uz compinit
 compinit
