@@ -14,13 +14,12 @@ else
   alias ll='ls -alF --color=auto'
 fi
 
-alias nv='nvim'
-
 alias mv='mv -i'
 alias rm='rm -i'
 
 alias ld='lazydocker'
 alias lg='lazygit'
+alias nv='nvim'
 
 # クリップボードへコピー
 alias yb='echo -n "$(git branch --show-current)" | pbcopy && echo "Copied branch: $(git branch --show-current)"'

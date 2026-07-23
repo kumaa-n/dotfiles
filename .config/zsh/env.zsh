@@ -1,5 +1,8 @@
 PS1='%n@%1~ %#'
 
+# $EDITOR からキーマップを推測するので明示的に指定
+bindkey -e
+
 # history
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=20000
@@ -9,7 +12,6 @@ setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_REDUCE_BLANKS
 setopt SHARE_HISTORY
 
-# History Beginning Search
 bindkey '^P' history-beginning-search-backward
 bindkey '^N' history-beginning-search-forward
 
