@@ -4,3 +4,6 @@
 # compinit が生成する補完キャッシュ
 .zcompdump
 .zcompdump-*
+
+# マシン固有のgit 設定
+.config/git/config.local

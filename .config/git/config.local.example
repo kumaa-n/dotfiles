@@ -1,0 +1,4 @@
+[user]
+	email = you@example.com
+	name = username
+	signingkey = ~/.ssh/github/your_key.pub

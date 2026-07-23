@@ -1,0 +1,41 @@
+[branch]
+	sort = -committerdate
+[commit]
+	gpgsign = true
+	template = ~/.config/git/commit_template
+	verbose = true
+[core]
+	editor = nvim
+	excludesfile = ~/.config/git/ignore
+	filemode = false
+	ignorecase = false
+	pager = delta
+	quotepath = false
+[delta]
+	navigate = true
+[fetch]
+	fsckobjects = true
+[gpg]
+	format = ssh
+[init]
+	defaultBranch = main
+[interactive]
+	diffFilter = delta --color-only
+[push]
+	followTags = true
+[rebase]
+	autosquash = true
+	autostash = true
+[receive]
+	fsckobjects = true
+[status]
+	showUntrackedFiles = all
+[tag]
+	sort = taggerdate
+	gpgsign = true
+[transfer]
+	fsckobjects = true
+[url "git@github.com:"]
+	insteadOf = https://github.com/
+[include]
+	path = ~/.config/git/config.local
