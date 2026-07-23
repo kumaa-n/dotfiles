@@ -17,6 +17,7 @@ antidote_dir=/usr/local/share/antidote
 [[ -d $antidote_dir ]] || antidote_dir=/opt/homebrew/share/antidote
 source "$antidote_dir/antidote.zsh"
 antidote load "$ZDOTDIR/.zsh_plugins.txt"
+unset antidote_dir
 
 # zsh-abbr
 abbr -S -qq dcb='docker compose build'
