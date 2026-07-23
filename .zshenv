@@ -1,3 +1,6 @@
+# PATH/fpath に重複を入れない
+typeset -U path PATH fpath FPATH
+
 export ZDOTDIR="$HOME/.config/zsh"
 export LANG=ja_JP.UTF-8
 export VISUAL=nvim
