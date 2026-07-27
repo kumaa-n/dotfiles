@@ -6,7 +6,10 @@ command_exists() {
 gbdm() {
   local base="${1:-main}"
   git switch "$base" || return 1
-  git branch --merged "$base" | grep -vE '^\*|master$|main$|milestone$|develop$' | xargs -I % git branch -d %
+
+  git branch --merged "$base" --format='%(refname:short)' |
+    grep -vE '^(master|main|milestone|develop)$' |
+    xargs -r git branch -d
 }
 
 # mkdirしてcd（--は引数の先頭が-で始まる場合の対策）
