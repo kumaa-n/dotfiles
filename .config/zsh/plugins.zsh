@@ -1,3 +1,6 @@
+# broot
+source ~/.config/broot/launcher/bash/br
+
 # mise
 eval "$(mise activate zsh --shims)"
 
