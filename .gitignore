@@ -7,3 +7,6 @@
 
 # マシン固有のgit 設定
 .config/git/config.local
+
+# gh の認証情報
+.config/gh/hosts.yml
