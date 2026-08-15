@@ -18,6 +18,7 @@ link() {
 mkdir -p ~/.config
 
 link ~/dotfiles/.zshenv ~/.zshenv
+link ~/dotfiles/.config/ccsession ~/.config/ccsession
 link ~/dotfiles/.config/gh ~/.config/gh
 link ~/dotfiles/.config/git ~/.config/git
 link ~/dotfiles/.config/nvim ~/.config/nvim
