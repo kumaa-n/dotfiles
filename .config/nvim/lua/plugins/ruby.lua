@@ -19,8 +19,6 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "solargraph",
         "rubocop",
-        "erb-formatter",
-        "erb-lint",
         "herb-language-server",
       })
     end,
@@ -33,5 +31,14 @@ return {
         solargraph = {},
       },
     },
+  },
+
+  -- html のフォーマットは herb_ls が遅いので html LSP を使う
+  {
+    "stevearc/conform.nvim",
+    opts = function(_, opts)
+      opts.formatters_by_ft = opts.formatters_by_ft or {}
+      opts.formatters_by_ft.html = { name = "html" }
+    end,
   },
 }
