@@ -19,6 +19,7 @@ alias rm='rm -i'
 
 alias ld='lazydocker'
 alias lg='lazygit'
+alias lsql='lazysql'
 alias nv='nvim'
 
 # クリップボードへコピー
