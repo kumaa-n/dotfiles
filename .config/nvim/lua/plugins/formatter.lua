@@ -57,6 +57,8 @@ return {
         javascript = { "deno_fmt", "prettier", stop_after_first = true },
         javascriptreact = { "deno_fmt", "prettier", stop_after_first = true },
         css = { "biome", "prettier", stop_after_first = true },
+        scss = { "prettier" },
+        html = { "prettier" },
         json = { "biome", "prettier", stop_after_first = true },
         jsonc = { "biome", "prettier", stop_after_first = true },
       },
