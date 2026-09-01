@@ -1,6 +1,27 @@
-.DS_Store
+# 機密情報
 .env*
 !.env.example
 !.env.sample
+
+# macOS
+.DS_Store
+._*
+__MACOSX/
+
+# Windows / WSL
+Thumbs.db
+*:Zone.Identifier
+
+# JetBrains
 .idea/
-.Identifier
+
+# vim / neovim
+*.swp
+*.swo
+*~
+
+# mise
+mise.local.toml
+
+# Claude Code
+**/.claude/settings.local.json
