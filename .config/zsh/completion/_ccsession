@@ -2,15 +2,17 @@
 
 # ccsession - fzf frontend for agent session resume
 
-_ccsession_sources=(claude all opencode grok codex)
+_ccsession_sources=(claude all opencode grok codex pi omp)
 _ccsession_colors=(auto always never)
 
 _ccsession_global_flags=(
-  '--source[session backend]:source:(claude all opencode grok codex)'
+  '--source[session backend]:source:(claude all opencode grok codex pi omp)'
   '--all[shorthand for --source=all]'
   '--opencode[shorthand for --source=opencode]'
   '--grok[shorthand for --source=grok]'
   '--codex[shorthand for --source=codex]'
+  '--pi[shorthand for --source=pi]'
+  '--omp[shorthand for --source=omp]'
   '--exclude-dir[hide sessions whose cwd contains <s>]:dir substring:'
   '--bind-grep[key that switches the picker to grep mode]:key:'
   '--bind-dir[key that switches the picker to dir mode]:key:'
