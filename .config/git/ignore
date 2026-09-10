@@ -19,9 +19,11 @@ Thumbs.db
 *.swp
 *.swo
 *~
+.neoconf.json
 
 # mise
 mise.local.toml
 
 # Claude Code
-**/.claude/settings.local.json
+CLAUDE.md
+.claude/
