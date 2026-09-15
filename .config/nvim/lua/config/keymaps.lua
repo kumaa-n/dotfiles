@@ -8,6 +8,10 @@ vim.keymap.set("n", "<C-S-l>", "<C-w>>", { desc = "Increase window width" })
 vim.keymap.set("n", "<C-S-j>", "<C-w>+", { desc = "Increase window height" })
 vim.keymap.set("n", "<C-S-k>", "<C-w>-", { desc = "Decrease window height" })
 
+-- Move buffer tab left/right
+vim.keymap.set("n", "<A-S-h>", "<Cmd>BufferLineMovePrev<CR>", { desc = "Move buffer tab left" })
+vim.keymap.set("n", "<A-S-l>", "<Cmd>BufferLineMoveNext<CR>", { desc = "Move buffer tab right" })
+
 -- Yank
 vim.keymap.set("n", "<leader>y", "", { desc = "Yank" })
 
