@@ -1,3 +1,5 @@
+[alias]
+	pushf = push --force-with-lease
 [branch]
 	sort = -committerdate
 [commit]
@@ -28,6 +30,7 @@
 	autoSetupRemote = true
 	default = simple
 	followTags = true
+	useForceIfIncludes = true
 [rebase]
 	autosquash = true
 	autostash = true
